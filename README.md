@@ -151,3 +151,41 @@ nace de web https://uigradients.com/#Netflix
     </div>
 </div>
 ```
+![Alt text](images%20md/8%20cambio%20component%20html%20de%20listar-productos.jpg)
+
+### Inportar font asome con cdn en index.html
+```
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+```
+se agrega todo en la parte del idex
+```
+<!doctype html>
+<html lang="en">
+<head>
+  <!--
+  <meta charset="utf-8">
+-->
+  <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+  <title>Cliente</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
+```
+![Alt text](images%20md/9%20agrega%20fa%20icons%20y%20montserrat.jpg)
+
+### Directiva router link en listar-producto.html
+va a irl definida crear-producto desde boton nuevo
+#
+app/components/listar-producto/listar-producto.component.html
+```
+ <button class="btn btn-success float-end" routerLink="/crear-producto">NUEVO</button>
+ ```
+![Alt text](images%20md/10%20router%20link%201.jpg)
+![Alt text](images%20md/11%20router%20link%202.jpg)
