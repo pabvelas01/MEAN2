@@ -189,3 +189,117 @@ app/components/listar-producto/listar-producto.component.html
  ```
 ![Alt text](images%20md/10%20router%20link%201.jpg)
 ![Alt text](images%20md/11%20router%20link%202.jpg)
+
+
+### Integrar reactiveFormsModule para modulo crear-producto
+![Alt text](images%20md/12%20integrar%20reactive%20forms%20module.jpg)
+agregar reactive form y form module en app.module.ts
+```
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppComponent } from './app.component';
+import { CrearProductoComponent } from './components/crear-producto/crear-producto.component';
+import { ListarProductoComponent } from './components/listar-producto/listar-producto.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    CrearProductoComponent,
+    ListarProductoComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+```
+despues agregar atributo a la clase 
+![Alt text](images%20md/13%20integrar%20form%20groups%20a%20ts%20crear-cliente.jpg)
+Despues se llena de la siguiente manera
+![Alt text](images%20md/14%20from%20groups%20formbuilder%20y%20validators%20en%20componente%20tds%20crear%20cliente.jpg)
+```
+import { Component, OnInit } from '@angular/core';
+// primero importar formGroup
+import {FormGroup,FormBuilder,Validators} from '@angular/forms'
+@Component({
+  selector: 'app-crear-producto',
+  templateUrl: './crear-producto.component.html',
+  styleUrls: ['./crear-producto.component.css']
+})
+export class CrearProductoComponent implements OnInit {
+
+  // 2 definir atributo
+  productoForm: FormGroup;
+  
+  //3 Inicializar constructor
+  constructor(private fb: FormBuilder) { 
+    this.productoForm=this.fb.group({
+      producto: ['',Validators.required],
+      categoria: ['',Validators.required],
+      ubicacion: ['',Validators.required],
+      precio: ['',Validators.required],
+
+    });
+
+  }
+
+  ngOnInit(): void {
+  }
+
+  agregarProducto(){
+    console.log(this.productoForm);
+  }
+
+}
+
+
+```
+
+### Enlazar form groups ts a componente html de crear-producto por propeng binding 
+![Alt text](images%20md/15%20reactive%20form%20en%20html%20componente%20crear%20producto.jpg) 
+
+```
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">Crear Producto</span>
+                    <form class="mt-3" [formGroup]="productoForm" (ngSubmit)="agregarProducto()">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control form-control-lg" formControlName="producto" id="producto" >
+                            <label for="producto">Producto</label>
+                          </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control form-control-lg" formControlName="categoria" id="categoria" >
+                            <label for="categoria">Categoria</label>
+                          </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control form-control-lg" formControlName="ubicacion" id="ubicacion" >
+                            <label for="ubicacion">Ubicacion</label>
+                          </div>
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control form-control-lg" formControlName="precio" id="precio" >
+                            <label for="precio">Precio</label>
+                          </div>
+                          <div class="mb-3">
+                            <button class="btn btn-secondary btn-lg float-start" routerLink="/">Volver</button>
+                            <button type="submit" class="btn btn-success btn-lg float-end" >Aceptar</button>
+                          </div>
+                    </form>
+                </div>
+            </div>
+         </div>
+    </div>
+</div>
+```

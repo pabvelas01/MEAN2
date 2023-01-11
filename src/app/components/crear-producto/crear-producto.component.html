@@ -4,26 +4,26 @@
             <div class="card">
                 <div class="card-body text-center">
                     <span class="titulo">Crear Producto</span>
-                    <form>
+                    <form class="mt-3" [formGroup]="productoForm" (ngSubmit)="agregarProducto()">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control form-control-lg" id="producto" >
+                            <input type="text" class="form-control form-control-lg" formControlName="producto" id="producto" >
                             <label for="producto">Producto</label>
                           </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control form-control-lg" id="categoria" >
+                            <input type="text" class="form-control form-control-lg" formControlName="categoria" id="categoria" >
                             <label for="categoria">Categoria</label>
                           </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control form-control-lg" id="ubicacion" >
+                            <input type="text" class="form-control form-control-lg" formControlName="ubicacion" id="ubicacion" >
                             <label for="ubicacion">Ubicacion</label>
                           </div>
                         <div class="form-floating mb-3">
-                            <input type="number" class="form-control form-control-lg" id="precio" >
+                            <input type="number" class="form-control form-control-lg" formControlName="precio" id="precio" >
                             <label for="precio">Precio</label>
                           </div>
                           <div class="mb-3">
                             <button class="btn btn-secondary btn-lg float-start" routerLink="/">Volver</button>
-                            <button class="btn btn-success btn-lg float-end" >Aceptar</button>
+                            <button type="submit" class="btn btn-success btn-lg float-end" >Aceptar</button>
                           </div>
                     </form>
                 </div>
