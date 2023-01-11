@@ -37,4 +37,14 @@ button.btn.btn.primary
 ```
 ng g c components/crear-producto
 ```
-image.png
+![Alt text](images%20md/4%20primer%20componente.jpg)
+
+### creacion de segundo componente 
+```
+ng g c components/listar-producto
+```
+
+### creacion de servicio producto en carpeta services
+```
+ng g s services/producto
+```
