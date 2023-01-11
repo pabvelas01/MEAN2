@@ -8,3 +8,6 @@
 ```
 ng serve --o
 ```
+
+### Configurar boostrap
+![Imagen](images%20md/Screenshot_5.jpg)
