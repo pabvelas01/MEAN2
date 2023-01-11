@@ -10,4 +10,22 @@ ng serve --o
 ```
 
 ### Configurar boostrap
-![Imagen](images%20md/Screenshot_5.jpg)
+Primero instalar por npm package 
+```
+npm install bootstrap@5.3.0-alpha1
+```
+![Como queda package](images%20md/1%20npm%20install%20boostrap.jpg)
+
+#### Agregar angular.json linea de css
+```
+"styles": [
+              "src/styles.css", -- ya existe 
+              "node_modules/bootstrap/dist/css/bootstrap.min.css" -- se agrega
+            ],
+```
+![angular json](images%20md/2%20angugalr.json.jpg)
+
+#### short key para agregar div con btn en visual studio code
+```
+button.btn.btn.primary
+```
