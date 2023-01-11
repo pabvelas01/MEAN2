@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CrearProductoComponent } from './components/crear-producto/crear-producto.component';
 import { ListarProductoComponent } from './components/listar-producto/listar-producto.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ListarProductoComponent } from './components/listar-producto/listar-pro
     ListarProductoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

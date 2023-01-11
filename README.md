@@ -67,3 +67,39 @@ export class Producto{
 }
 ```
 ![Alt text](images%20md/5%20agrega%20primer%20modelo.jpg)
+
+### Agregar componente de ruteo en caso de que no exista en el inicio del proyecto
+
+```
+ng generate module app-routing --flat --module=app
+```
+
+despues de eso tira puro codigo basura que se reemplaza por el de hero heroes
+```
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { CrearProductoComponent } from './components/crear-producto/crear-producto.component';
+//inport modules
+import { ListarProductoComponent } from './components/listar-producto/listar-producto.component';
+
+
+const routes: Routes = [
+  { path: '', component: ListarProductoComponent },
+  { path: 'crear-producto', component: CrearProductoComponent },
+  { path: 'editar-producto/:id', component: CrearProductoComponent },
+  { path: '**', redirectTo:'', pathMatch:'full' }, /*** Para retornar a la principal cuando url no hace match con nada */
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+
+```
+![Alt text](images%20md/6%20routing.jpg)
+
+Posterior a eso, en app.component.html agregar
+```
+<router-outlet></router-outlet>
+```
