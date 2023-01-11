@@ -108,3 +108,46 @@ Posterior a eso, en app.component.html agregar
 nace de web https://uigradients.com/#Netflix
 <a href="https://uigradients.com/#Netflix" target="_blank">ui gradiente netflix </a>
 ![Alt text](images%20md/7%20estilos%20generales%20css.jpg)
+
+### cambiar html del componente listar-productos
+```
+<!-- Deja un margin top de 5 pixel o algo asi -->
+<div class="container mt-5">
+
+    <div class="row">
+        <!--deja dos columnas vacias a la izquierda-->
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span>LISTADO DE PRODUCTOS</span>
+                    <!-- Clase para alinear el boton a la derecha con b5 float-end-->
+                    <button class="btn btn-success float-end">NUEVO</button>
+                    
+                    <!-- Clase para margin top-5 y formato de tabla striped-->
+                    <table class="table table-striped mt-5">
+                        <thead>
+                          <tr>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Ubicacion</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th>Coca Cola</th>
+                            <td>Bebidas</td>
+                            <td>Buenos Aires</td>
+                            <td>2</td>
+                            <td></td>
+                          </tr>
+                         
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+```
