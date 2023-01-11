@@ -103,3 +103,8 @@ Posterior a eso, en app.component.html agregar
 ```
 <router-outlet></router-outlet>
 ```
+
+### Configurar gradiente general en css 
+nace de web https://uigradients.com/#Netflix
+<a href="https://uigradients.com/#Netflix" target="_blank">ui gradiente netflix </a>
+![Alt text](images%20md/7%20estilos%20generales%20css.jpg)
