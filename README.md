@@ -29,3 +29,12 @@ npm install bootstrap@5.3.0-alpha1
 ```
 button.btn.btn.primary
 ```
+
+### creacion de primer componente
+ * primero creamos las carpetas contenedoras de services, componente y models
+ ![Alt text](images%20md/3%20carpetas%20contenedoras.jpg)
+* despues, aplicar ng generate component dentro de la carpeta component y el primer componente se llamara crear-producto
+```
+ng g c components/crear-producto
+```
+image.png
