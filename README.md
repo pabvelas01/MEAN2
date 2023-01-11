@@ -48,3 +48,22 @@ ng g c components/listar-producto
 ```
 ng g s services/producto
 ```
+
+### creacion del modelo manual en carpeta models creada con anterioridad
+```
+export class Producto{
+    _id?: number; /* es de tipo ? opcional el parametro*/
+    nombre:string;
+    categoria:string;
+    ubicacion: string;
+    precio: number;
+
+    constructor(nombre:string, categoria:string, ubicacion:string,precio:number){
+        this.nombre=nombre;
+        this.categoria=categoria;
+        this.ubicacion=ubicacion;
+        this.precio=precio
+    }
+}
+```
+![Alt text](images%20md/5%20agrega%20primer%20modelo.jpg)
