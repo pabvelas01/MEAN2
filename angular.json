@@ -72,16 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "cliente:build:production",
-              "headers": {
-                "Content-Type": "text/html; charset=iso-8859-1"
-              }
+              "browserTarget": "cliente:build:production"
             },
             "development": {
-              "browserTarget": "cliente:build:development",
-              "headers": {
-                "Content-Type": "text/html; charset=iso-8859-1"
-              }
+              "browserTarget": "cliente:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -89,10 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "cliente:build",
-            "headers": {
-              "Content-Type": "text/html; charset=iso-8859-1"
-            }
+            "browserTarget": "cliente:build"
           }
         },
         "test": {
