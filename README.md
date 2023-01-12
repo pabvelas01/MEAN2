@@ -1,3 +1,7 @@
+### para crear nuevo proyecto
+```
+ng new cliente 
+```
 ### Linea de Codigo para compilar en produccion
 ```ng build --prod --base-href="./"```
 ### github page
