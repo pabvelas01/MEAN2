@@ -8,18 +8,32 @@
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control form-control-lg" formControlName="producto" id="producto" >
                             <label for="producto">Producto</label>
+                            <div class="text-danger text-left" *ngIf="productoForm.get('producto')?.hasError('required') && productoForm.get('producto')?.touched ">
+                              <span>El nombre del producto es <strong>obligatorio</strong></span>
+                            </div>
                           </div>
+                          
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control form-control-lg" formControlName="categoria" id="categoria" >
                             <label for="categoria">Categoria</label>
+                            <div class="text-danger text-left" *ngIf="productoForm.get('categoria')?.hasError('required') && productoForm.get('categoria')?.touched ">
+                              <span>El nombre de la categoria es <strong>obligatorio</strong></span>
+                            </div>
                           </div>
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control form-control-lg" formControlName="ubicacion" id="ubicacion" >
                             <label for="ubicacion">Ubicacion</label>
+                            <div class="text-danger text-left" *ngIf="productoForm.get('ubicacion')?.hasError('required') && productoForm.get('ubicacion')?.touched ">
+                              <span>El nombre de la ubicacion es <strong>obligatoria</strong></span>
+                            </div>
                           </div>
                         <div class="form-floating mb-3">
                             <input type="number" class="form-control form-control-lg" formControlName="precio" id="precio" >
                             <label for="precio">Precio</label>
+                            <div class="text-danger text-left" *ngIf="productoForm.get('precio')?.hasError('required') && productoForm.get('precio')?.touched 
+                            && productoForm.get('precio')?.status=='INVALID'">
+                              <span>El precio es <strong>obligatorio</strong></span>
+                            </div>
                           </div>
                           <div class="mb-3">
                             <button class="btn btn-secondary btn-lg float-start" routerLink="/">Volver</button>

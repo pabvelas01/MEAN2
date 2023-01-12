@@ -303,3 +303,67 @@ export class CrearProductoComponent implements OnInit {
     </div>
 </div>
 ```
+
+### Agregar Validaciones con ngIF
+
+![Alt text](images%20md/16%20div%20class%20advertencia%20obligatoriedad.jpg)
+en el componente components/crear-producto/crear-producto.component.html
+```
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">Crear Producto</span>
+                    <form class="mt-3" [formGroup]="productoForm" (ngSubmit)="agregarProducto()">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control form-control-lg" formControlName="producto" id="producto" >
+                            <label for="producto">Producto</label>
+                            <div class="text-danger text-left" *ngIf="productoForm.get('producto')?.hasError('required') && productoForm.get('producto')?.touched ">
+                              <span>El nombre del producto es <strong>obligatorio</strong></span>
+                            </div>
+                          </div>
+                          
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control form-control-lg" formControlName="categoria" id="categoria" >
+                            <label for="categoria">Categoria</label>
+                            <div class="text-danger text-left" *ngIf="productoForm.get('categoria')?.hasError('required') && productoForm.get('categoria')?.touched ">
+                              <span>El nombre de la categoria es <strong>obligatorio</strong></span>
+                            </div>
+                          </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control form-control-lg" formControlName="ubicacion" id="ubicacion" >
+                            <label for="ubicacion">Ubicacion</label>
+                            <div class="text-danger text-left" *ngIf="productoForm.get('ubicacion')?.hasError('required') && productoForm.get('ubicacion')?.touched ">
+                              <span>El nombre de la ubicacion es <strong>obligatoria</strong></span>
+                            </div>
+                          </div>
+                        <div class="form-floating mb-3">
+                            <input type="number" class="form-control form-control-lg" formControlName="precio" id="precio" >
+                            <label for="precio">Precio</label>
+                            <div class="text-danger text-left" *ngIf="productoForm.get('precio')?.status=='INVALID' && productoForm.get('precio')?.touched ">
+                              <span>El precio es <strong>obligatorio</strong></span>
+                            </div>
+                          </div>
+                          <div class="mb-3">
+                            <button class="btn btn-secondary btn-lg float-start" routerLink="/">Volver</button>
+                            <button type="submit" class="btn btn-success btn-lg float-end" >Aceptar</button>
+                          </div>
+                    </form>
+                </div>
+            </div>
+         </div>
+    </div>
+</div>
+```
+
+### instalar toastr con npm 
+<a href="https://www.npmjs.com/package/ngx-toastr"> toas tr </a>
+```
+npm install ngx-toastr@14.x --save --force
+npm install @angular/animations@12.x --save --force
+```
+Despues agregar style css a angula.json
+![Alt text](images%20md/17%20agregar%20angular.json%20styles%20de%20toastr.jpg)
+
+Seguir los paso para agregar a app.module.ts y despues en el componente a utilizar
