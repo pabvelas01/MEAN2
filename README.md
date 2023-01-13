@@ -371,3 +371,64 @@ Despues agregar style css a angula.json
 ![Alt text](images%20md/17%20agregar%20angular.json%20styles%20de%20toastr.jpg)
 
 Seguir los paso para agregar a app.module.ts y despues en el componente a utilizar
+
+### Paso 2 despues de haber creado el server con nodej y express
+#### Primero importar un modulo en app.module.ts
+el httpClientModule
+ ```
+ import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppComponent } from './app.component';
+import { CrearProductoComponent } from './components/crear-producto/crear-producto.component';
+import { ListarProductoComponent } from './components/listar-producto/listar-producto.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HttpClientModule}  from '@angular/common/http';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    CrearProductoComponent,
+    ListarProductoComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
+    HttpClientModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+ ```
+
+en el service producto creado inyectar con client http
+quedaria asi 
+```
+import { HttpClientModule } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ProductoService {
+  url ="http://localhost:4000/api/rol"
+
+  constructor(private http: HttpClientModule) { }
+
+  // como es una peticion es un observable como las promise
+  getProductos(): Observable<any>{
+    return this.http.get(this.url);
+  }
+}
+
+```

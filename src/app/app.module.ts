@@ -8,13 +8,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {HttpClientModule}  from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     CrearProductoComponent,
-    ListarProductoComponent
+    ListarProductoComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
